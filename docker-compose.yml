@@ -1,0 +1,12 @@
+postgres:
+        image: postgres:9.6
+        container_name: postgres
+        environment:
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        volumes:
+            - postgres:/var/lib/postgresql/data/pgdata
+        volumes_from:
+            - data
+        ports:
+            - "5432:5432"
+        network_mode: bridge
